@@ -1,0 +1,165 @@
+// ----------------------------------------------------------------
+// -----            R3BStartrackMapped2CalPar                 -----
+// -----           Created July 2017 by M.Labiche              -----
+// ----------------------------------------------------------------
+
+/* Some notes:
+ * 
+ * 
+ */
+
+#include "R3BStartrackMapped2CalPar.h"
+#include "R3BStartrackMappedData.h"
+
+#include "FairRootManager.h"
+#include "FairLogger.h"
+#include "FairParIo.h"
+#include "FairParamList.h"
+
+#include "TClonesArray.h"
+#include "TH1F.h"
+#include "TF1.h"
+
+#include <iostream>
+#include <stdlib.h>
+#include "TMath.h"
+#include "TVector3.h"
+
+using namespace std;
+
+R3BStartrackMapped2CalPar::R3BStartrackMapped2CalPar()
+    : FairTask("R3B Startrack Mapped2CalPar", 1)
+    , fStartrackMappedDataCA(NULL)
+    , fUpdateRate(1000000)
+    , fMinStats(100000)
+    , fNumEvents(NULL)
+    , NEvents(0)
+    , fOutputFile(NULL)
+{
+}
+
+R3BStartrackMapped2CalPar::R3BStartrackMapped2CalPar(const char* name, Int_t iVerbose)
+    : FairTask(name, iVerbose)
+    , fStartrackMappedDataCA(NULL)
+    , fUpdateRate(1000000)
+    , fMinStats(100000)
+    , fTrigger(-1)
+    , fNofPlanes(0)
+    , fPaddlesPerPlane(0)
+    , NEvents(0)
+    , fOutputFile(NULL)
+{
+}
+
+R3BStartrackMapped2CalPar::~R3BStartrackMapped2CalPar()
+{
+	if (fNumEvents)
+	{
+        	delete fNumEvents;
+	}
+
+}
+
+InitStatus R3BStartrackMapped2CalPar::Init()
+{	
+     
+  LOG(DEBUG) << "Registering" << FairLogger::endl;
+  FairRootManager* fMan = FairRootManager::Instance();
+  if(!fMan) {
+    Fatal("Init", "No FairRootManager");
+    return kFATAL;
+  }
+
+  fStartrackMappedDataCA = (TClonesArray*) fMan->GetObject("StartrackMappedData");
+ 
+  return kSUCCESS;
+}
+
+
+void R3BStartrackMapped2CalPar::Exec(Option_t* option)
+{
+
+   if(++NEvents % 10000 == 0)
+      LOG(INFO) << NEvents << FairLogger::endl;
+
+
+    Int_t nHits = fStartrackMappedDataCA->GetEntries();
+
+    // Loop over mapped hits
+    for (Int_t i = 0; i < nHits; i++)
+    {
+      /*     		
+        R3BPaddleTamexMappedData* hit = (R3BPaddleTamexMappedData*)fMapped->At(i);
+        if (!hit) continue; // should not happen
+
+        Int_t iPlane = hit->GetPlaneId(); // 1..n
+        Int_t iBar   = hit->GetBarId();   // 1..n
+        Int_t iSide  = hit->GetSide();    // 1 or 2	                
+        
+        if (iPlane>=fNofPlanes) // this also errors for iDetector==0
+        {
+            LOG(ERROR) << "R3BTofdMapped2TCalPar::Exec() : more detectors than expected! Det: " << iPlane << " allowed are 1.." << fNofPlanes << FairLogger::endl;
+            continue;
+        }
+        if (iBar>=fPaddlesPerPlane) // same here
+        {
+            LOG(ERROR) << "R3BTofdMapped2TCalPar::Exec() : more bars then expected! Det: " << iBar << " allowed are 1.." << fPaddlesPerPlane << FairLogger::endl;
+            continue;
+        }
+
+
+		for (Int_t edge=0;edge<2;edge++)
+		{
+	
+	        // Fill TAC histogram
+	        //fEngine->Fill(iModule, hit->GetFineTime(edge));
+	        fEngine->Fill(iPlane, iBar, (iSide-1)*2 + edge+1, hit->GetFineTime(edge));
+	    }
+      */
+    }
+
+    // Increment events
+    NEvents += 1;
+}
+
+void R3BStartrackMapped2CalPar::FinishEvent()
+{
+}
+
+void R3BStartrackMapped2CalPar::FinishTask()
+{
+   FILE *fout = NULL;
+   if(fOutputFile)
+   {
+      fout = fopen(fOutputFile, "w");
+      if(!fout)
+      {
+         cerr << "Could not open " << fOutputFile << " for writing!\n";
+      }
+      else
+         fprintf(fout, "# StripId Ratio NumEvents\n");
+   }
+
+   // Calculate average
+   /*
+   for(int i = 0; i < fNumChannels; i++)
+   {
+      if(fNumEvents[i] == 0)
+         continue;
+
+      fRatioPidEnergy[i] /= (Double_t)fNumEvents[i];
+      
+      cout << "Channel " << i << ": " << fRatioPidEnergy[i] << " (" << fNumEvents[i] << ")" << endl;
+      if(fout)
+         fprintf(fout, "%d %lf %u\n", i, fRatioPidEnergy[i], fNumEvents[i]);
+   }
+   */
+}
+
+void R3BStartrackMapped2CalPar::SetOutputFile(const char *outFile)
+{
+   fOutputFile = const_cast<char*>(outFile);
+}
+
+
+ClassImp(R3BStartrackMapped2CalPar)
