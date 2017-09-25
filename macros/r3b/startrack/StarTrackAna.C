@@ -67,7 +67,8 @@ void StarTrackAna(Int_t nEvents = 1) {
 	//gSystem->Load("libR3BLand");
 	//gSystem->Load("libR3BmTof");
 	//gSystem->Load("libR3BTof");
-	gSystem->Load("libR3BSTaRTra");
+	//gSystem->Load("libR3BSTaRTra");  // obsolete since 2017
+	gSystem->Load("libR3BStartrack");
 	//gSystem->Load("libR3BChimera");
 	//gSystem->Load("libELILuMon");
 	
