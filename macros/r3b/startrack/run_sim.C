@@ -1,7 +1,7 @@
 void run_sim()
 {
     TString transport = "TGeant4";
-    Bool_t userPList = kTRUE; // option for TGeant4
+    Bool_t userPList = kFALSE; // option for TGeant4
 
     TString outFile = "sim.root";
     TString parFile = "par.root";
@@ -240,11 +240,13 @@ void run_sim()
 
     // -----   Initialize simulation run   ------------------------------------
     run->Init();
-    gMC->SetRandom(new TRandom3(randomSeed));
+    //gMC->SetRandom(new TRandom3(randomSeed));
+    TVirtualMC::GetMC()->SetRandom(new TRandom3(randomSeed));
 
     // ------  Increase nb of step for CALO
     Int_t nSteps = -15000;
-    gMC->SetMaxNStep(nSteps);
+    //gMC->SetMaxNStep(nSteps);
+    TVirtualMC::GetMC()->SetMaxNStep(nSteps);
 
     // -----   Runtime database   ---------------------------------------------
     R3BFieldPar* fieldPar = (R3BFieldPar*)rtdb->getContainer("R3BFieldPar");
