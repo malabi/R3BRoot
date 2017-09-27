@@ -45,7 +45,8 @@ void r3bsim()
   // ----------------------------------------------
   //     VMC Standard           kFALSE
   //     R3B Special            kTRUE;
-  Bool_t fUserPList = kTRUE;
+  Bool_t fUserPList = kFALSE;
+//  Bool_t fUserPList = kTRUE;
 
   // Target type
   TString target1 = "LeadTarget";
