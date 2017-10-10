@@ -43,7 +43,7 @@ R3BStartrack.cxx
 R3BGeoStartrack.cxx   
 R3BGeoStartrackPar.cxx   
 R3BStartrackContFact.cxx  
-R3BStartrackHitFinder.cxx 
+#R3BStartrackHitFinder.cxx 
 R3BStartrackDigit.cxx
 R3BStartrackEvent.cxx
 

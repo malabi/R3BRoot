@@ -68,7 +68,7 @@ trackerData/R3BSitrackerHit.cxx
 trackerData/R3BTrackerHit.cxx
 startrackData/R3BStartrackPoint.cxx
 startrackData/R3BStartrackHit.cxx
-startrackData/R3BStartrackerHit.cxx
+#startrackData/R3BStartrackerHit.cxx
 startrackData/R3BStartrackerDigitHit.cxx
 startrackData/R3BStartrackMappedData.cxx
 startrackData/R3BStartrackCalData.cxx
