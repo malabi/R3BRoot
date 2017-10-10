@@ -1,7 +1,11 @@
 void run_sim()
 {
     TString transport = "TGeant4";
+<<<<<<< HEAD
     Bool_t userPList = kTRUE; // option for TGeant4
+=======
+    Bool_t userPList = kFALSE; // option for TGeant4
+>>>>>>> dev-improve-startrack-level
 
     TString outFile = "sim.root";
     TString parFile = "par.root";
@@ -240,11 +244,21 @@ void run_sim()
 
     // -----   Initialize simulation run   ------------------------------------
     run->Init();
+<<<<<<< HEAD
     gMC->SetRandom(new TRandom3(randomSeed));
 
     // ------  Increase nb of step for CALO
     Int_t nSteps = -15000;
     gMC->SetMaxNStep(nSteps);
+=======
+    //gMC->SetRandom(new TRandom3(randomSeed));
+    TVirtualMC::GetMC()->SetRandom(new TRandom3(randomSeed));
+
+    // ------  Increase nb of step for CALO
+    Int_t nSteps = -15000;
+    //gMC->SetMaxNStep(nSteps);
+    TVirtualMC::GetMC()->SetMaxNStep(nSteps);
+>>>>>>> dev-improve-startrack-level
 
     // -----   Runtime database   ---------------------------------------------
     R3BFieldPar* fieldPar = (R3BFieldPar*)rtdb->getContainer("R3BFieldPar");

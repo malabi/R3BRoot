@@ -43,7 +43,11 @@ R3BStartrack.cxx
 R3BGeoStartrack.cxx   
 R3BGeoStartrackPar.cxx   
 R3BStartrackContFact.cxx  
+<<<<<<< HEAD:startrack/CMakeLists.txt
 R3BStartrackHitFinder.cxx 
+=======
+#R3BStartrackHitFinder.cxx 
+>>>>>>> dev-improve-startrack-level:startrack/CMakeLists.txt
 R3BStartrackDigit.cxx
 R3BStartrackEvent.cxx
 

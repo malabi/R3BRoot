@@ -45,7 +45,8 @@ void r3bsim()
   // ----------------------------------------------
   //     VMC Standard           kFALSE
   //     R3B Special            kTRUE;
-  Bool_t fUserPList = kTRUE;
+  Bool_t fUserPList = kFALSE;
+//  Bool_t fUserPList = kTRUE;
 
   // Target type
   TString target1 = "LeadTarget";
@@ -88,8 +89,13 @@ void r3bsim()
 //  detGeo.Add(new TObjString("DTOF"),          new TObjString("dtof_v15a.geo.root"));
 //  detGeo.Add(new TObjString("DCH"),           new TObjString("dch_v13a.geo.root"));
 //  detGeo.Add(new TObjString("TRACKER"),       new TObjString("tra_v13vac.geo.root"));
+<<<<<<< HEAD
   detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v14a.geo.root"));
 //  detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v13a.geo.root"));
+=======
+  detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startrack_v14a.geo.root"));
+//  detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startrack_v13a.geo.root"));
+>>>>>>> dev-improve-startrack-level
 //  detGeo.Add(new TObjString("GFI"),           new TObjString("gfi_v13a.geo.root"));
 //  detGeo.Add(new TObjString("LAND"),          new TObjString("land_v12a_10m.geo.root"));
 //  detGeo.Add(new TObjString("SCINTNEULAND"),  new TObjString("neuland_v12a_14m.geo.root"));

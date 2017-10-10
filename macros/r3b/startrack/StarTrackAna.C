@@ -94,7 +94,7 @@ void StarTrackAna(Int_t nEvents = 1) {
 	
 	//fRun->LoadGeometry(); //Needed for what??
 	
-	R3BSTaRTraHitFinder* startraHF = new R3BSTaRTraHitFinder();
+	R3BSTaRTraHitFinder* startraHF = new R3BSTaRTraHitFinder();  // !!! obsolete (replaced by R3BStartrackDigit)
 	//Selecting the geometry version
 	// 0- STARTRACKER 5.0.
 	// ...
