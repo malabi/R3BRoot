@@ -33,7 +33,6 @@
 #pragma link C++ class R3BVetoPoint+;
 #pragma link C++ class R3BStartrackPoint+;
 #pragma link C++ class R3BStartrackHit+;
-#pragma link C++ class R3BStartrackerHit+;
 #pragma link C++ class R3BStartrackerDigitHit+;
 #pragma link C++ class R3BStartrackMappedData+;
 #pragma link C++ class R3BStartrackCalData+;
