@@ -45,14 +45,17 @@ void r3bsim(){
    // R3B spec. generator:       "r3b"
 
    //TString fGene="box";
-   TString fGene="gammas"; // particle source  
+   //TString fGene="gammas"; // particle source  
    // TString fGene="ion_gun";
    //TString fGene="p2p";
    //TString fGene="cosmic";
-   //TString fGene="ascii";
+   TString fGene="ascii";
 
-   TString InFile = "../../../R3B-Input/Input/KINR_12C_a_a_4.8GeV.event";  // only used when ascii evt generator
+   //TString InFile = "../../../R3B-Input/Input/KINR_12C_a_a_4.8GeV.event";  // only used when ascii evt generator
 
+   //TString InFile = "p2p/outputs/quasi_ascii_48Cap2p_400MeVA.out";
+   //TString InFile = "p2p/outputs/quasi_ascii_12Cp2p_500MeVA_pencilbeamLH2.out";
+   TString InFile = "p2p/outputs/quasi_ascii_12Cp2p_500MeVA_2cmBeamSpotLH2.out";
 
    //-------------------------------------------------
    // Secondaries  generation (G4 only)
@@ -109,7 +112,7 @@ void r3bsim(){
 //  detGeo.Add(new TObjString("CRYSTALBALL"),   new TObjString("cal_v13a.geo.root"));
   //detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_Marc.geo.root"));
   //detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_v14a.geo.root"));
-    detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_10_v8.11.geo.root"));
+  //  detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_10_v8.11.geo.root"));
 //  detGeo.Add(new TObjString("TOF"),           new TObjString("tof_v13a.geo.root"));
 //  detGeo.Add(new TObjString("MTOF"),          new TObjString("mtof_v13a.geo.root"));
 //  detGeo.Add(new TObjString("DCH"),           new TObjString("dch_v13a.geo.root"));
@@ -119,7 +122,8 @@ void r3bsim(){
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v15300.geo.root")); // for p2p
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16.geo.root"));  
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16-300.geo.root"));
-  //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16_2layers.geo.root")); // for elastic
+  //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startrack_v16_2layers.geo.root")); 
+  //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16_2layers2015.geo.root")); // for elastic
   detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startrack_v16-300_2layers.geo.root")); // for elastic
 //  detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_S438.geo.root"));
 //  detGeo.Add(new TObjString("GFI"),           new TObjString("gfi_v13a.geo.root"));
@@ -138,7 +142,7 @@ void r3bsim(){
    //-------------------------------------------------
 
     //Int_t nEvents = 100;
-  Int_t nEvents = 1000;
+  Int_t nEvents = 10000;
        //Int_t nEvents = 20000;
 
    //-------------------------------------------------

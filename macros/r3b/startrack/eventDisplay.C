@@ -4,13 +4,13 @@ void eventDisplay()
   
   FairRuntimeDb* rtdb = fRun->GetRuntimeDb();
   FairParRootFileIo*  parIo1 = new FairParRootFileIo();
-//  parIo1->open("r3bpar.root");
-  parIo1->open("par.root");
+  parIo1->open("r3bpar.root");
+//  parIo1->open("par.root");
   rtdb->setFirstInput(parIo1);
   rtdb->print();
   
-//  fRun->SetInputFile("r3bsim.root");
-  fRun->SetInputFile("sim.root");
+  fRun->SetInputFile("r3bsim.root");
+//  fRun->SetInputFile("sim.root");
   fRun->SetOutputFile("test.root");
   
   FairEventManager *fMan= new FairEventManager();
