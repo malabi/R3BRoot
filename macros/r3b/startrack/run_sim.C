@@ -1,6 +1,7 @@
 void run_sim()
 {
     TString transport = "TGeant4";
+
     Bool_t userPList = kFALSE; // option for TGeant4
 
     TString outFile = "sim.root";
@@ -97,10 +98,12 @@ void run_sim()
 
     // CALIFA
     //R3BCalo* calo = new R3BCalo("Califa", "califa_10_v8.11.geo.root", kTRUE, 0., 0., 0.);
+
     //R3BCalifa* califa = new R3BCalifa("califa_10_v8.11.geo.root");
     // Selecting the Non-uniformity of the crystals (1 means +-1% max deviation)
     //califa->SetNonUniformity(1.0);
     //run->AddModule(califa);
+
 
     // Tof
     //run->AddModule(new R3BTof("Tof", "tof_v17a.geo.root", kTRUE, -417.359574, 2.400000, 960.777114, 0., -31., 0.));
@@ -108,7 +111,9 @@ void run_sim()
 
     // mTof
     //run->AddModule(new R3BmTof("mTof", "mtof_v17a.geo.root", kTRUE, -155.824045, 0.523976, 761.870346, 0., -16.7, 0.));
+
     //run->AddModule(new R3BmTof("mtof_v17a.geo.root", { -155.824045, 0.523976, 761.870346 }, { "", -90., +16.7, 90. }));
+
 
     // MFI
     //run->AddModule(new R3BMfi("Mfi", "mfi_v17a.geo.root", kTRUE, -63.82, 0., 520.25, 0., -13.5, 0.)); // s412
@@ -239,6 +244,7 @@ void run_sim()
 
     // -----   Initialize simulation run   ------------------------------------
     run->Init();
+
     //gMC->SetRandom(new TRandom3(randomSeed));
     TVirtualMC::GetMC()->SetRandom(new TRandom3(randomSeed));
 
@@ -246,8 +252,6 @@ void run_sim()
     Int_t nSteps = -15000;
     //gMC->SetMaxNStep(nSteps);
     TVirtualMC::GetMC()->SetMaxNStep(nSteps);
-
-
 
     // -----   Runtime database   ---------------------------------------------
     R3BFieldPar* fieldPar = (R3BFieldPar*)rtdb->getContainer("R3BFieldPar");

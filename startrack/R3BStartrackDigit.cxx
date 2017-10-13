@@ -106,8 +106,8 @@ void R3BStartrackDigit::Exec(Option_t* opt) {
 	//Double_t WidthMin1  = 2.25 ; // cm
 	Double_t WidthMin1  = 1.971 ; // cm
 	//Double_t StripPitch1= 0.00515 ; // = 51.5 um
-	//Double_t StripPitch1= 0.00385 + 0.0012 + 0.0001 + 0.000127+ 2e-6 ; // 
-	Double_t StripPitch1= 0.00385 + 0.0012; // 
+	Double_t StripPitch1= 0.00385 + 0.0012 + 0.0001 + 0.000127 + 2e-6 ; // 
+	//Double_t StripPitch1= 0.00385 + 0.0012; // 
 	//Double_t InclAng1=14.9;
 	Double_t InclAng1=14.3;
 	Double_t Rmin1=1.75;    // cm
@@ -170,7 +170,9 @@ void R3BStartrackDigit::Exec(Option_t* opt) {
 	//cout << "NbStrip2= " << NbStrip2 << endl;
 	Double_t Xlab2, Ylab2, Zlab2;  // see trunk/tracker/R3BStartrack.cxx
 	// for rotation of 30 deg
-	Double_t ZRotAngle2=30.;
+	//Double_t ZRotAngle2=30.;
+	// for rotation of 30 deg
+	Double_t ZRotAngle2=15.;
 	Xlab2=-((Length2/2)*sin(InclAng2*pi/180.)+ Rmin2)*sin((ZRotAngle2)*pi/180.);
 	Ylab2=-((Length2/2)*sin(InclAng2*pi/180.)+ Rmin2)*cos((ZRotAngle2)*pi/180.);
 	Zlab2=-Length2*cos(InclAng2*pi/180.)/2 + (Rmin2/tan(AngRangeMin2*pi/180.));
@@ -201,7 +203,9 @@ void R3BStartrackDigit::Exec(Option_t* opt) {
 	//cout << "NbStrip3= " << NbStrip3 << endl;
         Double_t Xlab3, Ylab3, Zlab3;  // see trunk/tracker/R3BStartrack.cxx
 	// for rotation of 30 degree (ie rotation of 0 deg)  
-	Double_t ZRotAngle3=30.;
+	//Double_t ZRotAngle3=30.;
+	// for rotation of 15 degree (ie rotation of 0 deg)  
+	Double_t ZRotAngle3=15.;
         Xlab3=-((Length3/2)*sin(InclAng3*pi/180.)+ Rmin3)*sin(ZRotAngle3*pi/180.);
         Ylab3=-((Length3/2)*sin(InclAng3*pi/180.)+ Rmin3)*cos(ZRotAngle3*pi/180.);
         Zlab3=-Length3*cos(InclAng3*pi/180.)/2 + (Rmin3/tan(AngRangeMin3*pi/180.));

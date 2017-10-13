@@ -256,14 +256,17 @@ void r3ball(Int_t nEvents = 1,
   if (fGenerator.CompareTo("box") == 0  ) {
     // 2- Define the BOX generator
     Int_t pdgId = 2212; // proton beam
-    Double32_t theta1 = 0.;  // polar angle distribution
-    Double32_t theta2 = 2.;
-    Double32_t momentum = 1.3;
-    FairBoxGenerator* boxGen = new FairBoxGenerator(pdgId, 3);
+
+    Double32_t theta1 = 45.;  // polar angle distribution
+    Double32_t theta2 = 45.;
+    //Double32_t momentum = 1.3;
+    Double32_t momentum = .64405;
+    FairBoxGenerator* boxGen = new FairBoxGenerator(pdgId, 1);
     boxGen->SetThetaRange(theta1, theta2);
-    boxGen->SetPRange(momentum, momentum*1.2);
+    boxGen->SetPRange(momentum, momentum);
     boxGen->SetPhiRange(0, 360);
-    boxGen->SetXYZ(0.0, 0.0, -1.5);
+    boxGen->SetXYZ(0.0, 0.0, 0.0);  // 
+//    boxGen->SetXYZ(0.0, 0.0, -1.5);
 //    boxGen->SetXYZ(0.0, 0.0, -300.);
     // add the box generator
     primGen->AddGenerator(boxGen);
@@ -271,7 +274,8 @@ void r3ball(Int_t nEvents = 1,
     // 128-Sn fragment
     R3BIonGenerator* ionGen = new R3BIonGenerator(50, 128, 50, 10, 0., 0., 1.3);
     ionGen->SetSpotRadius(0.1, -100., 0.);
-    primGen->AddGenerator(ionGen);
+
+    //primGen->AddGenerator(ionGen);
 
     // neutrons
     FairBoxGenerator* boxGen_n = new FairBoxGenerator(2112, 3);
@@ -279,7 +283,9 @@ void r3ball(Int_t nEvents = 1,
     boxGen_n->SetPRange(momentum, momentum*1.2);
     boxGen_n->SetPhiRange(0, 360);
     boxGen_n->SetXYZ(0.0, 0.0, -1.5);
-    primGen->AddGenerator(boxGen_n);
+
+    //primGen->AddGenerator(boxGen_n);
+
   }
 
   if (fGenerator.CompareTo("ascii") == 0  ) {
@@ -339,11 +345,11 @@ void r3ball(Int_t nEvents = 1,
 
   if (fGenerator.CompareTo("gammas") == 0  ) {
 	// 2- Define the CALIFA Test gamma generator
-	Double_t pdgId=22; // gamma emission
-	//Double_t pdgId=2212; // proton emission
+	//Double_t pdgId=22; // gamma emission
+	Double_t pdgId=2212; // proton emission
 	//Double_t pdgId=1000020040; // alpha emission
-	Double_t theta1= 0.;  
-	Double_t theta2= 180.;	
+	Double_t theta1= 70.;  
+	Double_t theta2= 70.;	
 	//Double_t theta1= 5.;  // polar angle distribution
 	//Double_t theta2= 105.;	
 	//Double_t theta1= 5.3;  // polar angle distribution
@@ -360,8 +366,8 @@ void r3ball(Int_t nEvents = 1,
 	//Double_t momentum=0.002; // 0.010 GeV/c = 10 MeV/c 
 	//Double_t momentumI=0.5; // 0.0001 GeV/c = 0.1 MeV/c 
 	//Double_t momentumF=0.5; // 
-	Double_t momentum=0.001; // 1 MeV/c
-	//Double_t momentum=0.808065; // 0.8 GeV/c
+	//Double_t momentum=0.001; // gamma of 1 MeV/c 
+	Double_t momentum=0.808065; // 0.8 GeV/c
 	//Double_t momentumF=0.8; //  
 	//Double_t momentumI=0.808065; // 0.808065 GeV/c (30MeV Kin Energy for protons) 
         //Double_t momentumF=0.808065; // 0.808065 GeV/c (300MeV Kin Energy for protons) 
@@ -398,7 +404,7 @@ void r3ball(Int_t nEvents = 1,
 
 	//gammasGen->SetBoxXYZ(-1.,-1.,-0.29,1.,1.,0.29);  // 5.8 mm CH2 target thick
 	//gammasGen->SetLorentzBoost(0.8197505718204776); //beta=0.81975 for 700 A MeV
-	gammasGen->SetLorentzBoost(0.5);  // beta=50%
+	//gammasGen->SetLorentzBoost(0.5);  // beta=50%
 	// add the gamma generator
 	primGen->AddGenerator(gammasGen);
   } 
