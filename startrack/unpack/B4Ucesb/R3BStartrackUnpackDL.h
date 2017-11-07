@@ -1,12 +1,12 @@
 // -----------------------------------------------------------------------------
 // -----                                                                   -----
-// -----                           R3BStartrackUnpack                            -----
+// -----                           R3BStartrackUnpackDL                            -----
 // -----                           Version 0.1                             -----
 // -----                    Created 28.05.2014 by M.Labiche               -----
 // -----                                                                   -----
 // -----------------------------------------------------------------------------
 
-#ifndef R3BCSTARTRACKUNPACK_H
+#ifndef R3BSTARTRACKUNPACK_H
 #define R3BSTARTRACKUNPACK_H
 
 #include "FairUnpack.h"
@@ -23,7 +23,7 @@ class TClonesArray;
 class R3BStartrackUnpack : public FairUnpack {
  public:
   //Constructor
-  R3BStartrackUnpack(char *strCalDir,
+  R3BStartrackUnpack(const char *strCalDir,
                 Short_t type = 0, Short_t subType = 0,
                 Short_t procId = 0,
                 Short_t subCrate = -1, Short_t control = 0);
