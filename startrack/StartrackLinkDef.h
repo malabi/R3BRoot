@@ -7,9 +7,13 @@
 #pragma link C++ class R3BGeoStartrack+;
 #pragma link C++ class R3BGeoStartrackPar+;
 #pragma link C++ class R3BStartrack+;
+<<<<<<< HEAD
 
 //#pragma link C++ class R3BStartrackHitFinder+;
 
+=======
+//#pragma link C++ class R3BStartrackHitFinder+;
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
 #pragma link C++ class R3BStartrackDigit+;
 #pragma link C++ class R3BStartrackCal2Hit+;
 #pragma link C++ class R3BStartrackHitPar+;

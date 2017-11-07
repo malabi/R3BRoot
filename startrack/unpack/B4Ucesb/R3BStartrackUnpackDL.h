@@ -1,6 +1,10 @@
 // -----------------------------------------------------------------------------
 // -----                                                                   -----
+<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.h
 // -----                           R3BStartrackUnpackDL                            -----
+=======
+// -----                           R3BStartrackUnpack                            -----
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.h
 // -----                           Version 0.1                             -----
 // -----                    Created 28.05.2014 by M.Labiche               -----
 // -----                                                                   -----
@@ -23,7 +27,11 @@ class TClonesArray;
 class R3BStartrackUnpack : public FairUnpack {
  public:
   //Constructor
+<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.h
   R3BStartrackUnpack(const char *strCalDir,
+=======
+  R3BStartrackUnpack(char *strCalDir,
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.h
                 Short_t type = 0, Short_t subType = 0,
                 Short_t procId = 0,
                 Short_t subCrate = -1, Short_t control = 0);

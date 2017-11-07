@@ -227,8 +227,14 @@ Bool_t R3BStartrackUnpack::DoUnpack(Int_t *data, Int_t size)  // used for Mbs fo
 
 		  l_s +=2;
 
+<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpacklmd.cxx
 		  // filling the Raw hit TClonesArray for word type 2  
 		  new ((*fRawData)[fNHits]) R3BStartrackRawHit(WRvhb,WRhb,WRlb, wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts_vhb, ts_hb, ts_lb, tsExt_vhb, tsExt_hb, tsExt_lb,ts_code47_lb,info_field, info_code);
+=======
+		  //new ((*fRawData)[fNHits]) R3BStartrackRawHit(WR,WRlb, wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts, ts_lb, tsExt, tsExt_lb,info_field, info_code);
+		  //fNHits++;
+		  new ((*fRawData)[fNHits]) R3BStartrackRawHit(WRvhb,WRhb,WRlb, wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts_vhb, ts_hb, ts_lb, tsExt_vhb, tsExt_hb, tsExt_lb,info_field, info_code);
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpacklmd.cxx
 		  fNHits++;
 
 		  //
@@ -292,7 +298,10 @@ Bool_t R3BStartrackUnpack::DoUnpack(Int_t *data, Int_t size)  // used for Mbs fo
 		  // if not S438 data (ie after Oct 2014):
 		  ts_lb= pl_data[l_s+1] & 0x0FFFFFFF;  // low bit time stamp in Silicon
 
+<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpacklmd.cxx
 
+=======
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpacklmd.cxx
 	          //LOG(INFO) << "R3BStartrackUnpack :   pl_data[ls+1]:" << pl_data[l_s+1] << FairLogger::endl;
 		  
 		  l_s +=2;	  
@@ -305,6 +314,11 @@ Bool_t R3BStartrackUnpack::DoUnpack(Int_t *data, Int_t size)  // used for Mbs fo
 		  //new ((*fRawData)[fNHits]) R3BStartrackRawHit(WR,WRlb, wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts, ts_lb, tsExt, tsExt_lb,info_field, info_code);
 		  //fNHits++;
 
+<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpacklmd.cxx
+=======
+		  new ((*fRawData)[fNHits]) R3BStartrackRawHit(WRvhb,WRhb,WRlb, wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts_vhb, ts_hb, ts_lb, tsExt_vhb, tsExt_hb, tsExt_lb,info_field, info_code);
+		  fNHits++;
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpacklmd.cxx
 
 		  // Filling the TCloneArray for word type 3
 		  new ((*fRawData)[fNHits]) R3BStartrackRawHit(WRvhb,WRhb,WRlb, wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts_vhb, ts_hb, ts_lb, tsExt_vhb, tsExt_hb, tsExt_lb,ts_code47_lb, info_field, info_code);

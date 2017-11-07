@@ -124,7 +124,11 @@ Bool_t R3BAsciiGenerator::ReadEvent(FairPrimaryGenerator* primGen) {
 
       *fInputFile >> iPid  >> iZ >> iA >> px >> py >> pz >> vx >> vy >> vz >> iMass;
      
+<<<<<<< HEAD
           cout << "-I- R3BAsciiGenerator: iPid: " << iPid <<
+=======
+      /*    cout << "-I- R3BAsciiGenerator: iPid: " << iPid <<
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
 	  ",   A = " << iA << " Z = " << iZ <<
 	  " px = "  << px <<
 	  " py = "  << py <<
@@ -160,12 +164,16 @@ Bool_t R3BAsciiGenerator::ReadEvent(FairPrimaryGenerator* primGen) {
       }
 
       //else pdgType = iPid;  // "normal" particle
+<<<<<<< HEAD
       else if(1 == iZ && 1 == iA)  //for proton
       {
 	  pdgType = iPid; 
       }
       else 
 	pdgType = iA;  // "normal" particle
+=======
+       else pdgType = iA;  // "normal" particle
+>>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
 
 
       // Give track to PrimaryGenerator
