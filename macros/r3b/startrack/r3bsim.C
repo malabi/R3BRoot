@@ -112,11 +112,9 @@ void r3bsim(){
 //  detGeo.Add(new TObjString("CRYSTALBALL"),   new TObjString("cal_v13a.geo.root"));
   //detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_Marc.geo.root"));
   //detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_v14a.geo.root"));
-<<<<<<< HEAD
+
   //  detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_10_v8.11.geo.root"));
-=======
-    detGeo.Add(new TObjString("CALIFA"),        new TObjString("califa_10_v8.11.geo.root"));
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
+
 //  detGeo.Add(new TObjString("TOF"),           new TObjString("tof_v13a.geo.root"));
 //  detGeo.Add(new TObjString("MTOF"),          new TObjString("mtof_v13a.geo.root"));
 //  detGeo.Add(new TObjString("DCH"),           new TObjString("dch_v13a.geo.root"));
@@ -126,12 +124,10 @@ void r3bsim(){
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v15300.geo.root")); // for p2p
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16.geo.root"));  
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16-300.geo.root"));
-<<<<<<< HEAD
+
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startrack_v16_2layers.geo.root")); 
   //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16_2layers2015.geo.root")); // for elastic
-=======
-  //detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_v16_2layers.geo.root")); // for elastic
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
+
   detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startrack_v16-300_2layers.geo.root")); // for elastic
 //  detGeo.Add(new TObjString("STaRTrack"),     new TObjString("startra_S438.geo.root"));
 //  detGeo.Add(new TObjString("GFI"),           new TObjString("gfi_v13a.geo.root"));

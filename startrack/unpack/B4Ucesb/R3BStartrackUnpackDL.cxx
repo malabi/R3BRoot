@@ -1,10 +1,6 @@
 // -----------------------------------------------------------------------------
 // -----                                                                   -----
-<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
 // -----                        R3BStartrackUnpackDL                        -----
-=======
-// -----                        R3BStartrackUnpack                         -----
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
 // -----                           Version 0.1                             -----
 // -----                    Created 28.05.2014 by M. Labiche               -----
 // -----                                                                   -----
@@ -34,11 +30,8 @@ using namespace std;
 
 
 //R3BStartrackUnpack: Constructor
-<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
+
 R3BStartrackUnpack::R3BStartrackUnpack(const char *strTraDir,
-=======
-R3BStartrackUnpack::R3BStartrackUnpack(char *strTraDir,
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
                              Short_t type, Short_t subType,
                              Short_t procId,
                              Short_t subCrate, Short_t control)
@@ -203,19 +196,11 @@ Bool_t R3BStartrackUnpack::DoUnpack(Int_t *data, Int_t size)  // used for Mbs fo
        
        //LOG(DEBUG) << "R3BStartrackerUnpack : Strip_ID IS " << strip_id << ",  Chip ID IS " << asic_id << " , Ladder ID IS " << module_id << " , ADC Data IS " << adcData << FairLogger::endl;
        //new ((*fRawData)[fNHits]) R3BStartrackRawHit(module_id, side, asic_id, strip_id, adcData, lclock);
-<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
-
        //new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, lclock);
        //new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts2);
        //new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts2, info_field, info_code);
 	 new ((*fRawData)[fNHits]) R3BStartrackRawHit(0.,0.,0., wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, 0., 0., 0., 0., 0., 0., ts2 ,info_field, info_code);
 
-=======
-
-       //new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, lclock);
-       //new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts2);
-       new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, strip_id, adcData, ts2, info_field, info_code);
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
        fNHits++;
 
   }
@@ -307,12 +292,9 @@ Bool_t R3BStartrackUnpack::DoUnpack2(Int_t *data_word0, Int_t *data_word1, Int_t
 	
 	//}  // end of while(l_s<size)
 
-<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
+
 	//new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, channel_id, energy, timestamp, info_field, info_code);
 	 new ((*fRawData)[fNHits]) R3BStartrackRawHit(0.,0.,0., wordtype, hitbit, module_id, side, asic_id, channel_id, energy, 0., 0., 0., 0., 0., 0., timestamp ,info_field, info_code);
-=======
-	new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, channel_id, energy, timestamp, info_field, info_code);
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
 	fNHits++;
 	//
 	// reseting in order to check that the same number of time info_code=4 (7,14) and info code = 5 (8,15)
@@ -389,12 +371,10 @@ Bool_t R3BStartrackUnpack::DoUnpack2(Int_t *data_word0, Int_t *data_word1, Int_t
 		    energy= ((~(energy)) & 0x00000FFF) ;  // we invert all adcData bit and take the last 12 bits only
 		  }
 
-<<<<<<< HEAD:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
+
        //new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, channel_id, energy, timestamp, info_field, info_code);
 	 new ((*fRawData)[fNHits]) R3BStartrackRawHit(0.,0.,0., wordtype, hitbit, module_id, side, asic_id, channel_id, energy, 0., 0., 0., 0., 0., 0., timestamp ,info_field, info_code);
-=======
-	new ((*fRawData)[fNHits]) R3BStartrackRawHit(wordtype, hitbit, module_id, side, asic_id, channel_id, energy, timestamp, info_field, info_code);
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff:startrack/unpack/B4Ucesb/R3BStartrackUnpackDL.cxx
+
 	fNHits++;
 
 	// } // end of while(l_s<size) for B

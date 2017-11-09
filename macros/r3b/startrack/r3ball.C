@@ -256,7 +256,7 @@ void r3ball(Int_t nEvents = 1,
   if (fGenerator.CompareTo("box") == 0  ) {
     // 2- Define the BOX generator
     Int_t pdgId = 2212; // proton beam
-<<<<<<< HEAD
+
     Double32_t theta1 = 45.;  // polar angle distribution
     Double32_t theta2 = 45.;
     //Double32_t momentum = 1.3;
@@ -267,16 +267,6 @@ void r3ball(Int_t nEvents = 1,
     boxGen->SetPhiRange(0, 360);
     boxGen->SetXYZ(0.0, 0.0, 0.0);  // 
 //    boxGen->SetXYZ(0.0, 0.0, -1.5);
-=======
-    Double32_t theta1 = 0.;  // polar angle distribution
-    Double32_t theta2 = 2.;
-    Double32_t momentum = 1.3;
-    FairBoxGenerator* boxGen = new FairBoxGenerator(pdgId, 3);
-    boxGen->SetThetaRange(theta1, theta2);
-    boxGen->SetPRange(momentum, momentum*1.2);
-    boxGen->SetPhiRange(0, 360);
-    boxGen->SetXYZ(0.0, 0.0, -1.5);
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
 //    boxGen->SetXYZ(0.0, 0.0, -300.);
     // add the box generator
     primGen->AddGenerator(boxGen);
@@ -284,11 +274,8 @@ void r3ball(Int_t nEvents = 1,
     // 128-Sn fragment
     R3BIonGenerator* ionGen = new R3BIonGenerator(50, 128, 50, 10, 0., 0., 1.3);
     ionGen->SetSpotRadius(0.1, -100., 0.);
-<<<<<<< HEAD
+
     //primGen->AddGenerator(ionGen);
-=======
-    primGen->AddGenerator(ionGen);
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
 
     // neutrons
     FairBoxGenerator* boxGen_n = new FairBoxGenerator(2112, 3);
@@ -296,11 +283,9 @@ void r3ball(Int_t nEvents = 1,
     boxGen_n->SetPRange(momentum, momentum*1.2);
     boxGen_n->SetPhiRange(0, 360);
     boxGen_n->SetXYZ(0.0, 0.0, -1.5);
-<<<<<<< HEAD
+
     //primGen->AddGenerator(boxGen_n);
-=======
-    primGen->AddGenerator(boxGen_n);
->>>>>>> b351b5200607b39d0f67b8cb57b4d8dc33bd5aff
+
   }
 
   if (fGenerator.CompareTo("ascii") == 0  ) {
